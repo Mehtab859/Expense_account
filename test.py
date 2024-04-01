@@ -3,7 +3,7 @@ import pandas as pd
 import sqlite3
 
 #Reading the data into a dataframe using pandas 
-df = pd.read_csv('/workspaces/Mehtab859/excel-import-test/expenses.csv', encoding='unicode_escape', header = 0)
+df = pd.read_csv('/workspaces/Expense_account/expenses.csv', encoding='unicode_escape', header = 0)
 
 #Cleaning the data after excel import. Removed missing value columns and table 2 that is not needed at this moment. Storing it in a new Dataframe (df1)
 df1 = df.drop(['Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Merchant', 'Id.1', 'Category'], axis = 1)
@@ -29,7 +29,7 @@ df1.to_sql(
 cursor = conn.cursor()
 
 #Update and clean column names
-df1 = df1.rename(columns = {' Amount ':'amount'})
+df1 = df1.rename(columns = {" Amount " : "Amount"})
 print(df1.columns)
 
 #Update data types of columns
@@ -42,3 +42,51 @@ cursor.execute('SELECT Date FROM Expenses WHERE Expense = "Transport"')
 rows = cursor.fetchall()
 for row in rows:
     print(row)
+
+#rename column " Amount " to "amount"
+sql_rename_column = """
+ALTER TABLE Expenses
+RENAME COLUMN " Amount " TO amount;
+"""
+cursor.execute(sql_rename_column)
+conn.commit()
+
+#View column names
+data=cursor.execute('''SELECT * FROM Expenses''')
+for column in data.description: 
+    print(column[0])
+
+#function to return an output depending on the select statement from Expenses
+def view_expenses_by_expense():
+    #connect to database
+    conn = sqlite3.connect('expense-account.db')
+    cursor = conn.cursor()
+    
+    #Ask for user Input
+    user_input_expense = input("Enter Expense: ")
+    #TO-DO Validate user input in database
+
+    #SQL statement and execute
+    sql = '''SELECT * FROM Expenses WHERE Expense=?;'''
+    cursor.execute(sql, (user_input_expense, ))
+    rows = cursor.fetchall()
+    #Command to print the columns and data in tabular form
+    columns = [description[0] for description in cursor.description]
+    print("\t".join(columns))
+    #Printing rows in tabular form with "\t" which is the command for tabs
+    for row in rows:
+        print("\t".join(str(col) for col in row))
+    #TO-DO Add visuals with matplotlib and seaborn
+
+view_expenses_by_expense()
+
+#user_input_expense = input("Enter Expense: ")
+
+#sql = '''SELECT * FROM Expenses WHERE Expense=?;'''
+#cursor.execute(sql, (user_input_expense, ))
+#rows = cursor.fetchall()
+
+#columns = [description[0] for description in cursor.description]
+#print("\t".join(columns))
+#for row in rows:
+    #print("\t".join(str(col) for col in row))

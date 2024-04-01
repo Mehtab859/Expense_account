@@ -1,0 +1,70 @@
+Expense,Date, Amount ,Id,,,,,Merchant,Id,Category
+Netflix,01/03/2024, £7.99 ,1,,,,,Netflix,1,Entertainment
+Lunch,01/03/2024, £25.60 ,2,,,,,Rosa's Thai,2,F&B
+Dinner,01/03/2024, £16.25 ,3,,,,,JD Weatherspoon,3,F&B
+Drinks,02/03/2024, £30.00 ,4,,,,,JD Weatherspoon,4,F&B
+Drinks,02/03/2024, £15.25 ,5,,,,,Greene King,5,F&B
+Drinks,02/03/2024, £30.00 ,6,,,,,JD Weatherspoon,6,F&B
+Groceries,02/03/2024, £22.64 ,7,,,,,Tesco,7,Groceries
+Amazon Prime,02/03/2024, £8.99 ,8,,,,,Amazon Prime,8,Entertainment
+Transport,02/03/2024, £5.60 ,9,,,,,TFL,9,Transport
+Transport,03/03/2024, £5.60 ,10,,,,,TFL,10,Transport
+Coffee,03/03/2024, £3.50 ,11,,,,,Regents University London,11,F&B
+Movie,03/03/2024, £8.52 ,12,,,,,ODEON,12,Entertainment
+Popcorn,03/03/2024, £12.49 ,13,,,,,ODEON,13,F&B
+Transport,04/03/2024, £5.60 ,14,,,,,TFL,14,Transport
+Bookshop,04/03/2024, £3.00 ,15,,,,,Word on the Water,15,Retail
+Buffet,05/03/2024, £26.95 ,16,,,,,Royal Nawaab,16,F&B
+Groceries,06/03/2024, £12.25 ,17,,,,,Tesco,17,Groceries
+Laundry,07/03/2024, £16.95 ,18,,,,,Love2Laundry,18,Wellbeing
+Breakfast,07/03/2024, £8.00 ,19,,,,,Pret Ë Manger,19,F&B
+Drinks,08/03/2024, £13.00 ,20,,,,,The Volunteer,20,F&B
+Dinner,08/03/2024, £9.00 ,21,,,,,Five Guys,21,F&B
+Transport,08/03/2024, £5.60 ,22,,,,,TFL,22,Transport
+Apple Bill,09/03/2024, £0.99 ,23,,,,,Apple,23,Phone bill
+Laundry,10/03/2024, £20.00 ,24,,,,,appWash,24,Wellbeing
+Groceries,11/03/2024, £15.00 ,25,,,,,Tesco,25,Groceries
+Top-Up,11/03/2024, £10.00 ,26,,,,,Three UK,26,Phone bill
+Coffee,12/03/2024, £3.50 ,27,,,,,Regents University London,27,F&B
+Transport,12/03/2024, £5.60 ,28,,,,,TFL,28,Transport
+Coffee,13/03/2024, £3.50 ,29,,,,,Regents University London,29,F&B
+Lunch,13/03/2024, £4.50 ,30,,,,,Regents University London,30,F&B
+Transport,13/03/2024, £5.60 ,31,,,,,TFL,31,Transport
+Transport,14/03/2024, £5.60 ,32,,,,,TFL,32,Transport
+Transport,15/03/2024, £5.60 ,33,,,,,TFL,33,Transport
+Transport,16/03/2024, £5.60 ,34,,,,,TFL,34,Transport
+Transport,17/03/2024, £16.00 ,35,,,,,Uber,35,Transport
+Groceries,17/03/2024, £8.50 ,36,,,,,Co-Op,36,Groceries
+Lunch,18/03/2024, £15.00 ,37,,,,,Wok-to-Walk,37,F&B
+Transport,18/03/2024, £8.00 ,38,,,,,TFL,38,Transport
+Spotify,19/03/2024, £10.99 ,39,,,,,Spotify,39,Music
+Groceries,19/03/2024, £25.75 ,40,,,,,Waitrose,40,Groceries
+Lunch,20/03/2024, £4.50 ,41,,,,,Regents University London,41,F&B
+Transport,20/03/2024, £5.60 ,42,,,,,TFL,42,Transport
+Transport,21/03/2024, £5.60 ,43,,,,,TFL,43,Transport
+Transport,22/03/2024, £5.60 ,44,,,,,TFL,44,Transport
+Drinks,23/03/2024, £30.00 ,45,,,,,JD Weatherspoon,45,F&B
+Drinks,23/03/2024, £24.50 ,46,,,,,NQ64,46,F&B
+Drinks,23/03/2024, £12.50 ,47,,,,,Vagabonds,47,F&B
+Drinks,23/03/2024, £12.50 ,48,,,,,Vagabonds,48,F&B
+Transport,23/03/2024, £8.00 ,49,,,,,TFL,49,Transport
+Laundry,24/03/2024, £16.95 ,50,,,,,Love2Laundry,50,Wellbeing
+Transport,25/03/2024, £5.60 ,51,,,,,TFL,51,Transport
+Dental,25/03/2024, £40.00 ,52,,,,,Bupa Dental,52,Wellbeing
+Transport,26/03/2024, £10.50 ,53,,,,,TFL,53,Transport
+Lunch,27/03/2024, £4.50 ,54,,,,,Regents University London,54,F&B
+Drinks,27/03/2024, £13.00 ,55,,,,,The Volunteer,55,F&B
+Transport,27/03/2024, £22.64 ,56,,,,,Uber,56,Transport
+Transport,28/03/2024, £5.60 ,57,,,,,TFL,57,Transport
+Coffee,28/03/2024, £3.50 ,58,,,,,Gail's,58,F&B
+Dinner,28/03/2024, £16.00 ,59,,,,,Greene King,59,F&B
+Drinks,29/03/2024, £24.50 ,60,,,,,Drake & Morgan,60,F&B
+Health Premium,30/03/2024, £45.00 ,61,,,,,Prudential,61,Insurance
+Souvenir,30/03/2024, £19.99 ,62,,,,,Harrod's,62,Gifts
+Souvenir,30/03/2024, £24.45 ,63,,,,,Crabtree & Evelyn,63,Gifts
+Flowers,30/03/2024, £15.00 ,64,,,,,Haute Florist,64,Gifts
+Merchandise,30/03/2024, £12.00 ,65,,,,,Regents University London,65,Gifts
+Haircut,31/03/2024, £15.00 ,66,,,,,Trevor Sorbie,66,Wellbeing
+Treatment,31/03/2024, £15.00 ,67,,,,,Trevor Sorbie,67,Wellbeing
+Laundry,31/03/2024, £16.95 ,68,,,,,Love2Laundry,68,Wellbeing
+Transport,31/03/2024, £5.60 ,69,,,,,TFL,69,Transport
