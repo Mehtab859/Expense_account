@@ -1,6 +1,9 @@
 #Import libraries to read the data into a dataframe and to connect sqlite
 import pandas as pd
 import sqlite3
+#Import Visualisation libraries for plots
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 #Reading the data into a dataframe using pandas 
 df = pd.read_csv('/workspaces/Expense_account/expenses.csv', encoding='unicode_escape', header = 0)
@@ -37,13 +40,13 @@ df1 = df1.astype({'Date':'str'})
 conn.commit()
 print(df1.head())
 
-#Trials  data retrieval
+#Trials for data retrieval
 cursor.execute('SELECT Date FROM Expenses WHERE Expense = "Transport"')
 rows = cursor.fetchall()
 for row in rows:
     print(row)
 
-#rename column " Amount " to "amount"
+#Rename column " Amount " to "amount"
 sql_rename_column = """
 ALTER TABLE Expenses
 RENAME COLUMN " Amount " TO amount;
@@ -56,37 +59,34 @@ data=cursor.execute('''SELECT * FROM Expenses''')
 for column in data.description: 
     print(column[0])
 
-#function to return an output depending on the select statement from Expenses
-def view_expenses_by_expense():
+#VISUALISATION: Count plot for Expenses
+plt.figure(figsize = (38,20))
+plt.title('Expenses')
+sns.countplot(x='Expense', data=df1)
+
+#Function to return an output depending on the select statement from Expenses
+def view_expenses_by_expense(user_input_expense):
     #connect to database
     conn = sqlite3.connect('expense-account.db')
     cursor = conn.cursor()
-    
-    #Ask for user Input
-    user_input_expense = input("Enter Expense: ")
-    #TO-DO Validate user input in database
 
     #SQL statement and execute
     sql = '''SELECT * FROM Expenses WHERE Expense=?;'''
     cursor.execute(sql, (user_input_expense, ))
     rows = cursor.fetchall()
+
     #Command to print the columns and data in tabular form
     columns = [description[0] for description in cursor.description]
     print("\t".join(columns))
     #Printing rows in tabular form with "\t" which is the command for tabs
     for row in rows:
         print("\t".join(str(col) for col in row))
-    #TO-DO Add visuals with matplotlib and seaborn
 
-view_expenses_by_expense()
+    return rows
 
-#user_input_expense = input("Enter Expense: ")
-
-#sql = '''SELECT * FROM Expenses WHERE Expense=?;'''
-#cursor.execute(sql, (user_input_expense, ))
-#rows = cursor.fetchall()
-
-#columns = [description[0] for description in cursor.description]
-#print("\t".join(columns))
-#for row in rows:
-    #print("\t".join(str(col) for col in row))
+#Validate user input
+user_input_expense = input("Enter Expense: ")
+if view_expenses_by_expense(user_input_expense):
+    print("Database connected. Valid Input.")
+else:
+    print("Database error. Invalid input.")
