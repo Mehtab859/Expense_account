@@ -13,7 +13,7 @@ df = pd.read_csv('expenses.csv', encoding =
 df1 = df.drop(['Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 
 'Unnamed: 7', 'Merchant', 'Id.1', 'Category'], axis = 1)
 #Printing the new dataframe
-print(df1.head())
+#print(df1.head())
 
 #Creating the expense account database by connecting to sqlite3
 conn = sqlite3.connect('expense-account.db')
@@ -32,8 +32,8 @@ df1.to_sql(
 
 #Read new data into a dataframe and the sql databse (Merchants table)
 df2 = pd.read_csv('Merchants.csv', encoding = 'unicode_escape', header = 0)
-print(df2.columns)
-print(df2.head())
+#print(df2.columns)
+#print(df2.head())
 df2.to_sql(
             name = 'Merchants',
             con = conn,
@@ -51,8 +51,8 @@ cursor = conn.cursor()
 #Trials for data retrieval df1
 cursor.execute('SELECT Expense, Date FROM Expenses WHERE Expense = "Transport"')
 rows = cursor.fetchall()
-for row in rows:
-    print(row)
+#for row in rows:
+    #print(row)
 
 #Rename column " Amount " to "amount"
 sql_rename_column = """
@@ -65,12 +65,12 @@ conn.commit()
 
 #View column names Expenses table
 data=cursor.execute('''SELECT * FROM Expenses''')
-for column in data.description: 
-    print(column[0])
+#for column in data.description: 
+    #print(column[0])
 #View columns names Merchants table
 data2 = cursor.execute('''SELECT * FROM Merchants''')
-for column in data.description: 
-    print(column[0])
+#for column in data.description: 
+    #print(column[0])
 
 #Clean amount column
 sql_update_amount = '''UPDATE Expenses SET amount = REPLACE(amount, '£', ' ');'''
